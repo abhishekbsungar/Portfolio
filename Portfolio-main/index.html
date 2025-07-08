@@ -1,0 +1,936 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Abhishek B Sungar - Portfolio</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
+    <link rel="stylesheet" href="css/animate.css">
+    
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+
+    <link rel="stylesheet" href="css/aos.css">
+
+    <link rel="stylesheet" href="css/ionicons.min.css">
+    
+    <link rel="stylesheet" href="css/flaticon.css">
+    <link rel="stylesheet" href="css/icomoon.css">
+    <link rel="stylesheet" href="css/style.css">
+
+
+
+<style>
+
+/*======================================
+//--//-->   ABOUT
+======================================*/
+
+.about-mf .box-shadow-full {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+.about-mf .about-img {
+  margin-bottom: 2rem;
+}
+
+.about-mf .about-img img {
+  margin-left: 10px;
+}
+
+/*======================================
+//--//-->   PROFILE PHOTO SIZING
+======================================*/
+
+/* Reduce hero section profile photo size */
+.one-third.js-fullheight.order-md-last.img {
+  max-width: 400px !important;
+  max-height: 500px !important;
+  width: 100% !important;
+  height: auto !important;
+  object-fit: cover !important;
+  border-radius: 10px !important;
+}
+
+/* Reduce about section profile photo size */
+.about-img img {
+  max-width: 200px !important;
+  max-height: 250px !important;
+  width: 100% !important;
+  height: auto !important;
+  object-fit: cover !important;
+  border-radius: 8px !important;
+}
+
+/* Make the photo container smaller */
+.about-img {
+  text-align: center !important;
+  margin-bottom: 1rem !important;
+}
+
+
+.skill-mf .progress {
+  /* background-color: #cde1f8; */
+  margin: .5rem 0 1.2rem 0;
+  border-radius: 0;
+  height: .7rem;
+}
+
+.skill-mf .progress .progress-bar {
+  height: .7rem;
+  background-color: #ffbd39;
+}
+
+
+/* Animation styles */
+#typing-animation {
+  position: relative;
+  font-size: 30px;
+  font-weight: bold;
+  color: rgb(255, 255, 255);
+  overflow: hidden;
+  white-space: nowrap;
+  animation: typing 3s steps(20, end) infinite;
+}
+
+#typing-animation:before {
+  content: "";
+  /* position: absolute; */
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: #ccc;
+  animation: typing-cursor 0.5s ease-in-out infinite;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes typing-cursor {
+  from {
+    width: 5px;
+  }
+  to {
+    width: 0;
+  }
+}
+
+
+/* project image zoom effect */
+
+.zoom-effect {
+  overflow: hidden;
+  transition: transform 0.3s ease-out;
+}
+
+.zoom-effect:hover {
+  transform: scale(1.1);
+}
+
+/* Center hero section content */
+#home-section .text {
+  text-align: center !important;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Animated gradient background for hero section */
+#home-section {
+  background: linear-gradient(-45deg, #ffbd39, #22223b, #3a86ff, #ff006e);
+  background-size: 400% 400%;
+  animation: gradientBG 12s ease infinite;
+}
+@keyframes gradientBG {
+  0% {background-position: 0% 50%;}
+  50% {background-position: 100% 50%;}
+  100% {background-position: 0% 50%;}
+}
+
+/* Floating glowing effect for profile photo */
+.one-third.js-fullheight.order-md-last.img {
+  box-shadow: 0 0 40px 10px #ffbd39, 0 0 80px 20px #3a86ff44;
+  animation: floatPhoto 3.5s ease-in-out infinite;
+}
+@keyframes floatPhoto {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px) scale(1.03); }
+}
+
+/* Project card 3D lift and shadow on hover */
+.blog-entry {
+  transition: transform 0.3s cubic-bezier(0.4,0,0.2,1), box-shadow 0.3s cubic-bezier(0.4,0,0.2,1);
+  box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+}
+.blog-entry:hover {
+  transform: translateY(-18px) scale(1.04) rotateZ(-1deg);
+  box-shadow: 0 8px 32px 0 #ffbd3933, 0 2px 32px 0 #3a86ff22;
+  z-index: 2;
+}
+/* Fade-in and slide-up animation for project cards */
+.project-card-animate {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s cubic-bezier(0.4,0,0.2,1), transform 0.8s cubic-bezier(0.4,0,0.2,1);
+}
+.project-card-animate.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Ripple effect for buttons */
+.btn, .btn-primary {
+  position: relative;
+  overflow: hidden;
+}
+.btn .ripple, .btn-primary .ripple {
+  position: absolute;
+  border-radius: 50%;
+  transform: scale(0);
+  animation: ripple 0.6s linear;
+  background: rgba(255,189,57,0.4);
+  pointer-events: none;
+}
+@keyframes ripple {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+/* Animated gradient background for projects section */
+#project-section {
+  position: relative;
+  z-index: 1;
+}
+#project-section::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  z-index: -1;
+  background: linear-gradient(120deg, #ffbd39 0%, #3a86ff 100%);
+  background-size: 200% 200%;
+  opacity: 0.08;
+  animation: projectBG 10s ease-in-out infinite;
+}
+@keyframes projectBG {
+  0% {background-position: 0% 50%;}
+  50% {background-position: 100% 50%;}
+  100% {background-position: 0% 50%;}
+}
+
+</style>
+<script>
+// Animate project cards on scroll
+function animateProjectCards() {
+  var cards = document.querySelectorAll('.project-card-animate');
+  cards.forEach(function(card) {
+    var rect = card.getBoundingClientRect();
+    if (rect.top < window.innerHeight - 60) {
+      card.classList.add('visible');
+    }
+  });
+}
+window.addEventListener('scroll', animateProjectCards);
+window.addEventListener('DOMContentLoaded', animateProjectCards);
+</script>
+
+<script>
+// Animated counters for stats section
+function animateCounters() {
+  var counters = document.querySelectorAll('.counter-wrap .number');
+  counters.forEach(function(counter) {
+    var target = +counter.getAttribute('data-number');
+    if (!counter.classList.contains('counted')) {
+      let count = 0;
+      let step = Math.ceil(target / 60);
+      let interval = setInterval(function() {
+        count += step;
+        if (count >= target) {
+          counter.textContent = target;
+          clearInterval(interval);
+        } else {
+          counter.textContent = count;
+        }
+      }, 20);
+      counter.classList.add('counted');
+    }
+  });
+}
+if ('IntersectionObserver' in window) {
+  var counterObserver = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        animateCounters();
+      }
+    });
+  }, { threshold: 0.3 });
+  document.querySelectorAll('.counter-wrap').forEach(function(el) {
+    counterObserver.observe(el);
+  });
+} else {
+  window.addEventListener('scroll', animateCounters);
+}
+</script>
+
+<script>
+// Ripple effect for buttons
+function createRipple(event) {
+  const button = event.currentTarget;
+  const circle = document.createElement('span');
+  const diameter = Math.max(button.clientWidth, button.clientHeight);
+  const radius = diameter / 2;
+  circle.classList.add('ripple');
+  circle.style.width = circle.style.height = `${diameter}px`;
+  circle.style.left = `${event.clientX - button.getBoundingClientRect().left - radius}px`;
+  circle.style.top = `${event.clientY - button.getBoundingClientRect().top - radius}px`;
+  button.appendChild(circle);
+  setTimeout(() => {
+    circle.remove();
+  }, 600);
+}
+document.querySelectorAll('.btn, .btn-primary').forEach(btn => {
+  btn.addEventListener('click', createRipple);
+});
+</script>
+
+
+  </head>
+  <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+	  
+	  
+    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light site-navbar-target" id="ftco-navbar">
+	    <div class="container">
+	      <a class="navbar-brand" href="index.html">Abhishek B Sungar</a>
+	      <button class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+	        <span class="oi oi-menu"></span> Menu
+	      </button>
+
+	      <div class="collapse navbar-collapse" id="ftco-nav">
+	        <ul class="navbar-nav nav ml-auto">
+	          <li class="nav-item"><a href="#home-section" class="nav-link"><span>Home</span></a></li>
+	          <li class="nav-item"><a href="#about-section" class="nav-link"><span>About</span></a></li>
+	          <li class="nav-item"><a href="#resume-section" class="nav-link"><span>Resume</span></a></li>
+	          <li class="nav-item"><a href="#project-section" class="nav-link"><span>Projects</span></a></li>
+	          <li class="nav-item"><a href="#contact-section" class="nav-link"><span>Contact</span></a></li>
+	        </ul>
+	      </div>
+	    </div>
+	  </nav>
+	  <section id="home-section" class="hero">
+		  <div class="home-slider  owl-carousel">
+	       <div class="slider-item ">
+	      	<div class="overlay"></div>
+	         <div class="container">
+	          <div class="row d-md-flex no-gutters slider-text align-items-end justify-content-end" data-scrollax-parent="true">
+	          	<div class="one-third js-fullheight order-md-last img" style="background-image:url(images/profile.jpeg);">
+	          	 <div class="overlay"></div>
+	          	</div>
+		          <div class="one-forth d-flex  align-items-center ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
+		          	<div class="text">
+		          		<span class="subheading">Hello!</span>
+			            <h1 class="mb-2 mt-3">I'm <span>Abhishek B Sungar</span></h1>
+
+						<!-- Element to contain animated typing -->
+						<div style="margin: 20px 0;">
+							<span id="typing-animation"></span>
+						</div>
+
+						<script>
+
+						// Initialize the typing animation
+						const typingAnimationElement = document.getElementById('typing-animation');
+
+						// Create an array of typing text - CUSTOMIZE THESE FOR YOURSELF
+						const typingTexts = [
+						'Data Analyst',
+						'Power BI Specialist',
+						'SQL Expert',
+						'Cloud Data Integrator',
+						'Business Insights Creator'
+						];
+
+						// Create a function to display the typing animation for a given text
+						function playTypingAnimation(text) {
+						// Loop through each character and add it to the element
+						for (let i = 0; i < text.length; i++) {
+							setTimeout(() => {
+							typingAnimationElement.textContent += text[i];
+							}, i * 120); // Increase the delay to slow down the typing animation
+						}
+
+						// Once the animation is complete, reset the text and start over
+						setTimeout(() => {
+							typingAnimationElement.textContent = '';
+							playTypingAnimation(typingTexts[(typingTexts.indexOf(text) + 1) % typingTexts.length]);
+						}, text.length * 120);
+						}
+
+						// Start the typing animation loop
+						playTypingAnimation(typingTexts[0]);
+
+						</script>
+
+						<div style="text-align: center; margin: 30px 0;">
+			            <h2>Connect & Discover My Work</h2>
+						</div>
+			            <p style="text-align: center;"><a href="https://www.linkedin.com/in/abhishek-b-sungar/" class="btn btn-primary py-3 px-4">LinkedIn</a> 
+						<a href="https://github.com/YOUR-GITHUB-USERNAME" class="btn btn-white btn-outline-white py-3 px-4">My works</a></p>
+							
+					</div>
+		          </div>
+	        	</div>
+	        </div>
+	      </div>
+		</div>
+    </section>
+
+
+
+    <section class="ftco-about img ftco-section ftco-no-pb" id="about-section">
+    	<div class="container">
+			<div class="row">
+				<div class="row d-flex align-items-stretch">
+				<!-- <div class="row d-flex"> -->
+					<div class="col-md-6 col-lg-5 d-flex">
+						<div class="img-about img d-flex align-items-stretch">
+							<div class="overlay">
+								<div class="row">
+									<div class="col-sm-6 col-md-5">
+									  <div class="about-img">
+										<img src="images/profile.jpeg" class="img-fluid rounded b-shadow-a" alt="Abhishek B Sungar">
+									  </div>
+									</div>
+
+								  </div>
+
+								
+								  <div class="skill-mf">
+									<p class="title-s">Skills</p>
+									<span>SQL (Advanced)</span> <span class="pull-right">Expert</span>
+									<div class="progress"><div class="progress-bar" role="progressbar" style="width: 95%;"></div></div>
+									<span>Python (pandas, NumPy, matplotlib)</span> <span class="pull-right">Advanced</span>
+									<div class="progress"><div class="progress-bar" role="progressbar" style="width: 90%;"></div></div>
+									<span>Power BI</span> <span class="pull-right">Advanced</span>
+									<div class="progress"><div class="progress-bar" role="progressbar" style="width: 90%;"></div></div>
+									<span>Tableau</span> <span class="pull-right">Intermediate</span>
+									<div class="progress"><div class="progress-bar" role="progressbar" style="width: 75%;"></div></div>
+									<span>Alteryx, Looker Studio</span> <span class="pull-right">Intermediate</span>
+									<div class="progress"><div class="progress-bar" role="progressbar" style="width: 70%;"></div></div>
+									<span>Excel (Advanced)</span> <span class="pull-right">Advanced</span>
+									<div class="progress"><div class="progress-bar" role="progressbar" style="width: 85%;"></div></div>
+									<span>Cloud Platforms (AWS, GCP, Azure, Snowflake, Redshift, MySQL)</span> <span class="pull-right">Proficient</span>
+									<div class="progress"><div class="progress-bar" role="progressbar" style="width: 80%;"></div></div>
+									<span>Statistical Analysis & Modeling</span> <span class="pull-right">Advanced</span>
+									<div class="progress"><div class="progress-bar" role="progressbar" style="width: 85%;"></div></div>
+									<span>Data Storytelling & Communication</span> <span class="pull-right">Advanced</span>
+									<div class="progress"><div class="progress-bar" role="progressbar" style="width: 90%;"></div></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<div class="col-md-6 col-lg-7 pl-lg-5 pb-5">
+						<div class="row justify-content-start pb-3">
+							<div class="col-md-12 heading-section ftco-animate">
+								<h1 class="big">About</h1>
+								<h2 class="mb-4">About Me</h2>
+								
+								<p>Detail-oriented and results-driven Data Analyst with 4+ years of experience delivering business-critical analytics solutions across insurance, IT services, and consulting sectors. Specialized in developing scalable SQL queries, building dynamic dashboards in Power BI, and integrating cloud-native data sources such as AWS and Snowflake. Adept at aligning analytics with business goals through KPI development, stakeholder collaboration, and robust data modeling. Proven ability to transform raw data into actionable insights that improve operational efficiency and customer experience.</p>
+								<ul class="about-info mt-4 px-md-0 px-2">
+									<li class="d-flex"><span>Profile:</span> <span>Data Analyst</span></li>
+									<li class="d-flex"><span>Experience:</span> <span>4+ Years</span></li>
+									<li class="d-flex"><span>Education:</span> <span>Bachelor of Mechanical Engineering</span></li>
+									<li class="d-flex"><span>Certification:</span> <span>Gold category certificate in Full Stack Data Science and AI Program (NASSCOM)</span></li>
+									<li class="d-flex"><span>Language:</span> <span>English, Kannada, Hindi, Marathi</span></li>
+									<li class="d-flex"><span>Location:</span> <span>Bangalore, India</span></li>
+									<li class="d-flex"><span>Email:</span> <span>abhisheksungar@gmail.com</span></li>
+									<li class="d-flex"><span>Phone:</span> <span>+91 7760462052</span></li>
+								</ul>
+							</div>
+						</div>						
+					</div>
+				</div>
+			</div>
+		</div>
+    </section>
+
+	<div class="counter-wrap ftco-animate d-flex mt-md-3" style="text-align: center; justify-content: center; flex-direction: column;">
+		<div class="text">
+			<p class="mb-4">
+				<span class="number" data-number="70">65</span> <span>+</span>
+				<span>&nbsp; Repositories Available</span>
+			</p>
+			<p><a href="https://github.com/your-username" class="btn btn-primary py-3 px-3">GitHub</a></p>  
+		</div>
+	</div>
+
+
+	
+    <section class="ftco-section ftco-no-pb" id="resume-section">
+    	<div class="container">
+    		<div class="row justify-content-center pb-5">
+          <div class="col-md-10 heading-section text-center ftco-animate">
+          	<h1 class="big big-2">Resume</h1>
+            <h2 class="mb-4">Experience</h2>
+            <div class="resume-wrap ftco-animate">
+  <span class="date">Oct 2022 – Present</span>
+  <h2>Data Analyst II</h2>
+  <span class="position">Bajaj Allianz Life / Clover InfoTech</span>
+  <p class="mt-4">
+    • Led CLV and risk analytics initiatives, reducing forecasting errors by 85%<br>
+    • Developed Power BI dashboards for real-time underwriting and fraud risk monitoring<br>
+    • Built scalable ETL pipelines using Alteryx, optimizing report refresh cycles by 50%<br>
+    • Conducted sales performance and revenue uplift analyses using advanced SQL and statistical models<br>
+    • Implemented predictive models for customer churn risk segmentation<br>
+    • Collaborated with stakeholders to define KPIs and improve business process efficiency<br>
+    • Designed and performance-tuned complex SQL queries across high-volume datasets<br>
+    • Built robust data models in Power BI mapping customer behavior trends<br>
+    • Conducted in-depth data quality checks and provided mentorship for Power BI optimization
+  </p>
+</div>
+<div class="resume-wrap ftco-animate">
+  <span class="date">Jul 2022 – Oct 2022</span>
+  <h2>Application Developer I</h2>
+  <span class="position">Oracle Financial Services Software / Adecco India</span>
+  <p class="mt-4">
+    • Developed predictive SQL models and customer retention analysis, boosting retention by 25%<br>
+    • Built and maintained dashboards using Power BI and Looker for fraud detection and KPI tracking<br>
+    • Automated ad hoc reporting using Python and Power Query, cutting manual reporting by 70%<br>
+    • Collaborated with risk teams to set up early fraud alert mechanisms<br>
+    • Optimized SQL procedures for performance and scalability<br>
+    • Supported EDA for leadership using agile delivery sprints
+  </p>
+</div>
+<div class="resume-wrap ftco-animate">
+  <span class="date">Jan 2020 – Jul 2022</span>
+  <h2>Data Analyst</h2>
+  <span class="position">Oracle Financial Services Software / Zennet Infotech</span>
+  <p class="mt-4">
+    • Conducted customer churn modeling using logistic regression, reducing attrition by 33%<br>
+    • Developed and maintained Tableau and Excel dashboards for operational and risk reporting<br>
+    • Built SQL-based cohort and risk event analyses, improving business insights and KPIs<br>
+    • Automated ETL data flows, enhancing data warehouse integration with cloud systems (AWS)<br>
+    • Partnered with product and finance teams to standardize operational metrics and reporting frameworks
+  </p>
+</div>
+			<div class="row justify-content-center mt-5">
+				<div class="col-md-6 text-center ftco-animate">
+					<p><a href="https://drive.google.com/file/d/1Xo8DOT4K8ZTcbRwr2V62MdKp9QNVUe2U/view?usp=sharing" class="btn btn-primary py-4 px-5">Download Resume</a></p>
+				</div>
+		</div>
+	</div>
+		<!--<div class="row">
+			<h1 class="big-4">Experience</h1>
+			<div class="underline"></div>
+		</div>
+		<br>
+		
+		<div class="row">
+				<div class="col-md-6">
+					<div class="resume-wrap ftco-animate">
+						<span class="date">2021-Present</span>
+						<h2>Data Analyst</h2>
+						<span class="position">Merkle</span>
+						<p class="mt-4">Merkle, a leading CXM and media company with over 10K+ professionals globally. It's a part of Dentsu International. 
+							<ul>
+								<li>Analysed ad campaigns, clickstream, and customer surveys data, identified an increasing demand and launched a strategic product line.</li>
+								<li>Developed time series forecasting models to predict sales and optimize marketing budgets, got model performance of 92%.</li>
+								<li>Designed and executed A/B tests, performed rigorous statistical analysis. Led to 20% MoM increase in the conversion rate.</li>
+							</ul>
+						</p>
+					</div>
+
+				</div>
+
+				<div class="col-md-6">
+					<div class="resume-wrap ftco-animate">
+						<span class="date">2018-2021</span>
+						<h2>Data Analyst</h2>
+						<span class="position">iQuanti</span>
+						<p class="mt-4">iQuanti is a data-driven digital marketing analytics and solutions company, helps top 100 global brands. 
+							<ul>
+								<li>Performed in-depth market research and analysis to create online pages. Resulted in ~100% website growth and 30% increase in conversion rate YoY.</li>
+								<li>Delivered multiple training and mentorship sessions on analytical tools like SQL, MS Excel, Power BI, Tableau and Python.</li>
+								<li>Performed migration and enhancements for merchandising dashboard, involved data integration and its feature improvement.</li>
+							</ul>
+						</p></div></div</div>-->
+
+		<br>
+		<br>
+		<section class="ftco-section ftco-no-pb" id="resume-section">
+			<div class="container">
+				<div class="row justify-content-center pb-5">
+			  <div class="col-md-10 heading-section text-center ftco-animate">
+				  <h1 class="big big-2">Education</h1>
+				<h2 class="mb-4">Education</h2>
+				</div>
+		<!--<div class="row">
+			<h1 class="big-4">Education</h1>
+			<div class="underline"></div>
+		</div>-->
+		<br>
+		
+			<div class="row">
+    			<div class="col-md-6">
+    				<div class="resume-wrap ftco-animate">
+    					<span class="date">2017</span>
+    					<h2>Bachelor of Mechanical Engineering</h2>
+    					<span class="position">M S Ramaiah Institute of Technology, Bengaluru, Karnataka</span>
+    				</div>
+    			</div>
+
+				<div class="col-md-6">
+    				<div class="resume-wrap ftco-animate">
+    					<span class="date">Certification</span>
+    					<h2>Full Stack Data Science and AI Program (Gold Category)</h2>
+    					<span class="position">NASSCOM (Govt. of India, NSQF aligned)</span>
+    				</div>
+    			</div>
+
+
+    		</div>
+    </section>
+
+   
+
+    <section class="ftco-section" id="project-section">
+      <div class="container">
+        <div class="row justify-content-center mb-5 pb-5">
+          <div class="col-md-7 heading-section text-center ftco-animate">
+            <h1 class="big big-2">Projects</h1>
+            <h2 class="mb-4">Projects</h2>
+            <p>Project details coming soon. Stay tuned!</p>
+          </div>
+        </div>
+        <div class="row d-flex">
+          <!-- Power BI HR Analytics Dashboard Project -->
+          <div class="col-md-12 d-flex ftco-animate">
+            <div class="blog-entry justify-content-end" style="width:100%;">
+              <div class="text mt-3 float-right d-block" style="width:100%;">
+                <h3 class="heading">HR Analytics Dashboard (Power BI)</h3>
+                <p>Interactive HR analytics dashboard built in Power BI. Explore workforce trends, KPIs, and insights.</p>
+                <!-- Power BI Embed -->
+                <div style="width:100%;max-width:1400px;margin:0 auto;">
+                  <iframe title="HR Analytics Dashboard" width="100%" height="800" src="https://app.powerbi.com/view?r=eyJrIjoiZjRhNmY3NmYtOTMzNy00NTE0LTgzMTAtZmVhMDIxZWQ4Mzk3IiwidCI6IjQzOGYxMWQ0LWRhODEtNGFmMi1iMmQ2LWQ2NzhjZTQ0MWJiZSJ9" frameborder="0" allowFullScreen="true"></iframe>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 d-flex ftco-animate">
+          	<div class="blog-entry justify-content-end">
+				<a href="https://github.com/your-username/Vrindavan-Excel-Dashboard" class="block-20 zoom-effect" 
+				style="background-image: url('images/proj_1.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+			 </a>			 
+              <div class="text mt-3 float-right d-block">
+
+                <h3 class="heading"><a href="https://github.com/your-username/Vrindavan-Excel-Dashboard">Vrindavan Sales Analysis Dashboard using EXCEL</a></h3>
+                <p>A Microsoft Excel-based interactive data visualization project analyzing 2024 sales and customer data. It provides insights into customer behavior, sales trends, and strategies for growth.</p>
+			</div>
+            </div>
+          </div>
+          <div class="col-md-4 d-flex ftco-animate">
+          	<div class="blog-entry justify-content-end">
+              <a href="https://github.com/your-username/SQL_PizzaSalesAnalysis" class="block-20 zoom-effect" style="background-image: url('images/proj_2.jpg');">
+              </a>
+              <div class="text mt-3 float-right d-block">
+
+                <h3 class="heading"><a href="https://github.com/your-username/SQL_PizzaSalesAnalysis">Pizza Sales Analysis Report using SQL</a></h3>
+                <p>Analyzed pizza sales data using SQL to uncover trends, optimize menus, and improve marketing strategies. Delivered insights to enhance business performance.</p>
+                </div>
+            </div>
+          </div>
+          <div class="col-md-4 d-flex ftco-animate">
+          	<div class="blog-entry">
+              <a href="https://github.com/your-username/Python_DiwaliSalesAnalysis" class="block-20 zoom-effect" style="background-image: url('images/proj_3.jpg');">
+              </a>
+              <div class="text mt-3 float-right d-block">
+
+                <h3 class="heading"><a href="https://github.com/your-username/Python_DiwaliSalesAnalysis">Diwali Sales Analysis Report using PYTHON</a></h3>
+                <p>Analyzed customer purchasing patterns during Diwali to identify trends and factors influencing behavior, aiding in optimized marketing strategies.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+	<br>
+		<!-- added justify-content-center to center align the last two projects -->
+		<div class="row d-flex justify-content-center">  
+			<div class="col-md-4 d-flex ftco-animate">
+				<div class="blog-entry justify-content-end">
+				<a href="https://github.com/your-username/Powerbi-GadaElectronics-PhoneSales-Dashboard" class="block-20 zoom-effect" style="background-image: url('images/proj_4.jpg');">
+				</a>
+				<div class="text mt-3 float-right d-block">
+  
+				  <h3 class="heading"><a href="https://github.com/your-username/Powerbi-GadaElectronics-PhoneSales-Dashboard">GadaElectronics PhoneSales Dashboard using Powerbi</a></h3>
+				  <p>Developed an interactive Power BI dashboard to track monthly performance, providing insights into sales, revenue, and YoY trends to support data-driven decisions and strategic planning.</p>
+				</div>
+			  </div>
+			</div>
+			<div class="col-md-4 d-flex ftco-animate">
+				<div class="blog-entry justify-content-end">
+				<a href="https://github.com/your-username/Tableau-Python_CustomerSegmentationAnalysis" class="block-20 zoom-effect" style="background-image: url('images/proj_5.jpg');">
+				</a>
+				<div class="text mt-3 float-right d-block">
+  
+				  <h3 class="heading"><a href="https://github.com/your-username/Tableau-Python_CustomerSegmentationAnalysis">Customer Segmentation Analysis using Tableau</a></h3>
+				  <p>Performed RFM analysis to segment customers for an automobile bike company. Utilized Python for EDA and Tableau for interactive visualizations, enabling targeted marketing and improved sales.</p>
+				</div>
+			  </div>
+			</div>
+		 </div>
+	  </div>
+    </section>
+
+	
+	<!--
+	  <div class="ftco-section ftco-hireme img margin-top" style="background-image: url(images/backGround.jpeg)">
+			 <div class="container"> 
+				<div class="row justify-content-center">
+					<div class="col-md-7 ftco-animate text-center">
+						<h2>More projects on<span> Github  </span> </h2>
+						<div class="heading"> <h4> I love to solve business problems &amp; uncover hidden data stories </h4>
+						<br>
+						<p><a href="https://github.com/your-username" class="btn btn-primary py-3 px-5">GitHub</a></p>
+						</div>
+					</div>
+				</div>
+			 </div> -->
+		</div>
+	</section>
+
+	<section class="ftco-section ftco-no-pt ftco-no-pb ftco-counter img" id="section-counter">
+		<div class="container">
+		  <div class="row d-md-flex align-items-center">
+			<div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
+			  <div class="block-18">
+				<div class="text">
+				  <strong class="number" data-number="75">0</strong>
+				  <span>Github Repositories</span>
+				</div>
+			  </div>
+			</div>
+			<div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
+			  <div class="block-18">
+				<div class="text">
+				  <strong class="number" data-number="10">0</strong>
+				  <span>Virtual Internship</span>
+				</div>
+			  </div>
+			</div>
+			<div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
+			  <div class="block-18">
+				<div class="text">
+				  <strong class="number" data-number="30">0</strong>
+				  <span>Github Projects</span>
+				</div>
+			  </div>
+			</div>
+			<div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
+			  <div class="block-18">
+				<div class="text">
+				  <strong class="number" data-number="500">0</strong>
+				  <span>LinkedIn Connection</span>
+				</div>
+			  </div>
+			</div>
+		  </div>
+		</div>
+	  </section>
+
+    <section class="ftco-section contact-section ftco-no-pb" id="contact-section">
+      <div class="container">
+      	<div class="row justify-content-center mb-5 pb-3">
+          <div class="col-md-7 heading-section text-center ftco-animate">
+            <h1 class="big big-2">Contact</h1>
+            <h2 class="mb-4">Contact Me</h2>
+            <p>Below are the details to reach out to me!</p>
+			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+	<ul class="ftco-footer-social list-unstyled d-flex justify-content-center align-items-center mb-0">
+		<li class="ftco-animate normal-txt">Find me on </li>
+		<li class="ftco-animate"><a href="https://www.linkedin.com/in/abhishek-b-sungar/"><span class="fab fa-linkedin"></span></a></li>
+		<li class="ftco-animate"><a href="mailto:abhisheksungar@gmail.com"><span class="fas fa-envelope"></span></a></li>
+		<!--<li class="ftco-animate"><a href="https://www.hackerrank.com/profile/your-hackerrank-profile"><span class="fab fa-hackerank"></span></a></li>
+		<li class="ftco-animate"><a href="https://github.com/your-username"><span class="fab fa-github"></span></a></li>
+		<li class="ftco-animate"><a href="https://www.theforage.com/profile/your-forage-profile"><span class="fa fa-globe"></span></a></li>
+		<li class="ftco-animate"><a href="https://www.kaggle.com/your-kaggle-profile"><span class="fab fa-kaggle"></span></a></li>
+		<li class="ftco-animate"><a href="https://leetcode.com/u/your-leetcode-profile/"><span class="fa fa-link"></span></a></li>-->
+	  </ul>		
+          </div>
+        </div>
+	</div>
+	
+   </div>
+
+        <div class="row d-flex contact-info mb-5">
+          <div class="col-md-6 col-lg-3 d-flex ftco-animate">
+          	<div class="align-self-stretch box p-4 text-center">
+          		<div class="icon d-flex align-items-center justify-content-center">
+          			<span class="icon-map-signs"></span>
+          		</div>
+          		<h3 class="mb-4">Address</h3>
+	            <p>Bangalore, India</p>
+	          </div>
+          </div>
+          <div class="col-md-6 col-lg-3 d-flex ftco-animate">
+          	<div class="align-self-stretch box p-4 text-center">
+          		<div class="icon d-flex align-items-center justify-content-center">
+          			<span class="icon-phone2"></span>
+          		</div>
+          		<h3 class="mb-4">Contact Number</h3>
+	            <p><a href="tel://7760462052">+91 7760462052</a></p>
+	          </div>
+          </div>
+          <div class="col-md-6 col-lg-3 d-flex ftco-animate">
+          	<div class="align-self-stretch box p-4 text-center">
+          		<div class="icon d-flex align-items-center justify-content-center">
+          			<span class="icon-paper-plane"></span>
+          		</div>
+          		<h3 class="mb-4">Email Address</h3>
+	            <p><a href="mailto:abhisheksungar@gmail.com">abhisheksungar@gmail.com</a></p>
+	          </div>
+          </div>
+          <div class="col-md-6 col-lg-3 d-flex ftco-animate">
+          	<div class="align-self-stretch box p-4 text-center">
+          		<div class="icon d-flex align-items-center justify-content-center">
+          			<span class="icon-globe"></span>
+          		</div>
+          		<h3 class="mb-4">Resume</h3>
+	            <p><a href="https://drive.google.com/file/d/1Xo8DOT4K8ZTcbRwr2V62MdKp9QNVUe2U/view?usp=sharing">Your Resume Name</a></p>
+	          </div>
+          </div>
+
+		  <div class="container">
+			<br>
+			<br>
+			<div class="row justify-content-center">
+				<div class="col-md-7 ftco-animate text-center">
+					<p>						 </p>
+					<p>						 </p>
+					<p>						 </p>
+					<h3>Excited to Discuss Further - <span>Ready to Chat</span> 
+						<h1>  		<h1>
+						<a href="mailto:abhisheksungar@gmail.com" class="btn btn-primary py-3 px-5">Click Here</a>
+					  </h3>					  
+				</div>
+			
+   </div>
+ </section>	
+
+ 	
+
+ <footer class="ftco-footer ftco-section">
+	<div class="container">
+	  <div class="row">
+		<div class="col-md-12 text-center">
+		  <p>&copy; <script>document.write(new Date().getFullYear());</script> All rights reserved. This template is made with <i class="icon-heart color-danger" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Abhishek B Sungar</a></p>
+		</div>
+	  </div>
+	</div>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+<style>
+  /* Custom Tooltip Style */
+  .tooltip {
+    position: relative;
+    display: inline-block;
+  }
+
+  .tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%; /* Position above the icon */
+    left: 50%;
+    margin-left: -60px; /* Center the tooltip */
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+  }
+</style>
+
+<ul class="ftco-footer-social list-unstyled d-flex justify-content-center align-items-center mb-0">
+  <!--<li class="ftco-animate tooltip">
+    <a href="https://www.linkedin.com/in/your-profile/"><span class="fab fa-linkedin"></span></a>
+    <span class="tooltiptext">LinkedIn</span>
+  </li>
+  <li class="ftco-animate tooltip">
+    <a href="https://wa.me/9552477356"><span class="fab fa-whatsapp"></span></a>
+    <span class="tooltiptext">WhatsApp</span>
+  </li>
+  <li class="ftco-animate tooltip">
+    <a href="mailto:your-email@example.com"><span class="fas fa-envelope"></span></a>
+    <span class="tooltiptext">Email</span>
+  </li>-->
+  <li class="ftco-animate tooltip">
+	<a href="https://www.hackerrank.com/profile/your-hackerrank-profile">
+	  <span class="fas fa-code icon-small"></span> <!-- You can use this or other similar icons -->
+	</a>
+	<span class="tooltiptext">HackerRank</span>
+  </li>  
+  <li class="ftco-animate tooltip">
+    <a href="https://github.com/your-username"><span class="fab fa-github"></span></a>
+    <span class="tooltiptext icon-small">GitHub</span>
+  </li>
+  <li class="ftco-animate tooltip">
+    <a href="https://www.theforage.com/profile/your-forage-profile"><span class="fa fa-globe"></span></a>
+    <span class="tooltiptext icon-small">Forage</span>
+  </li>
+  <li class="ftco-animate tooltip">
+    <a href="https://www.kaggle.com/your-kaggle-profile"><span class="fab fa-kaggle"></span></a>
+    <span class="tooltiptext icon-small">Kaggle</span>
+  </li>
+  <li class="ftco-animate tooltip">
+    <a href="https://leetcode.com/u/your-leetcode-profile/"><span class="fa fa-link"></span></a>
+    <span class="tooltiptext icon-small">LeetCode</span>
+  </li>
+</ul>
+
+  </footer>  
+
+
+  <!-- loader -->
+  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+
+
+  <script src="js/jquery.min.js"></script>
+  <script src="js/jquery-migrate-3.0.1.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/jquery.easing.1.3.js"></script>
+  <script src="js/jquery.waypoints.min.js"></script>
+  <script src="js/jquery.stellar.min.js"></script>
+  <script src="js/owl.carousel.min.js"></script>
+  <script src="js/jquery.magnific-popup.min.js"></script>
+  <script src="js/aos.js"></script>
+  <script src="js/jquery.animateNumber.min.js"></script>
+  <script src="js/scrollax.min.js"></script>
+  
+  <script src="js/main.js"></script>
+    
+  </body>
+</html>
