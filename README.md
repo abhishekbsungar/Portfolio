@@ -1,4 +1,4 @@
-## 🚀 Janvi Dhonde: Portfolio Website
+## 🚀 Abhishek Sungar: Portfolio Website
 
 Welcome to my personal portfolio website! This project showcases my skills, experience, and passion for Data Analytics. Feel free to explore and connect!
 
@@ -19,7 +19,7 @@ The primary goal of this project is to establish a professional online presence 
 
 Your feedback is valuable to me! Please feel free to share your thoughts or suggestions. Let’s connect and grow together!
 
-- 🌐 LinkedIn: https://www.linkedin.com/in/janvidhonde/
-- 📧 Emailid: janvidhonde@gmail.com
-- 📱 ContactNo: +91 7588575196
+- 🌐 LinkedIn: https://www.linkedin.com/in/abhisheksungar/
+- 📧 Emailid: abhisheksungar@gmail.com
+- 📱 ContactNo: +91 7760462052
 - 📝 Resume: https://drive.google.com/file/d/1tQF4knEJD0qfGZB8Tk3l2oRp_qC4nlN7/view?usp=drive_link
